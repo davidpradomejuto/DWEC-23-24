@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>formulario parte 1 david prado</title>
+</head>
+
+<body>
+
+    <form action="#">
+        <fieldset>
+            <legend>Datos personales</legend>
+
+            <p>
+                <label>Nombre:</label>
+                <input type="text" name="Nombre" id="Nombre">
+
+                <label>Apellidos:</label>
+                <input type="text" name="Apellidos" id="Apellidos">
+
+                <label>Edad:</label>
+                <select name="Edad" id="Edad" >
+                    <option selected>...</option>
+                    <option>-18</option>
+                    <option>18-25</option>
+                    <option>25-35</option>
+                    <option>35-50</option>
+                    <option>50-65</option>
+                    <option>65+</option>
+                </select>
+            </p>
+        </fieldset>
+        <br>
+        <fieldset>
+            <legend>Datos fisicos</legend>
+
+            <p>
+                <label>Peso:</label>
+                <input type="number" name="Peso" id="Peso"> kg
+            </p>
+            <p>
+                <label>Sexo:</label>
+                <input type="radio" name="Hombre" id="Hombre" value="Hombre">Hombre
+                <input type="radio" name="Mujer" id="Mujer" value="Mujer">Mujer
+            </p>
+
+        </fieldset>
+
+        <fieldset>
+            <legend>Datos fiscales</legend>
+            <label>Estado civil:</label>
+            <input type="radio" name="soltero" id="soltero" value="soltero">soltero
+            <input type="radio" name="casado" id="casado" value="casado">casado
+            <input type="radio" name="otro" id="otro" value="otro">otro
+
+        </fieldset>
+
+
+        <br>
+        <fieldset>
+            <legend>Aficiones</legend>
+            <p>
+                <input type="checkbox" id="Cine" name="Cine" value="Cine">Cine
+
+                <input type="checkbox" id="Literatura" name="Literatura" value="Literatura">Literatura
+
+                <input type="checkbox" id="Tebeos" name="Tebeos" value="Tebeos">Tebeos
+            </p>
+            <p>
+                <input type="checkbox" id="Deporte" name="Deporte" value="Deporte">Deporte
+
+                <input type="checkbox" id="Musica" name="Musica" value="Musica">Musica
+
+                <input type="checkbox" id="Television" name="Television" value="Television">Television
+            </p>
+        </fieldset>
+        <input type="submit" value="Enviar">
+        <input type="reset" value="Borrar">
+    </form>
+
+    <h1>Parte 2 de la actividad</h1>
+    <h1>Preferencias gastronómicas</h1>
+    <form>
+        <h2>Tipos de comidas favoritas</h2>
+        <input type="checkbox" id="italiana" name="comida">
+        <label>Italiana</label><br>
+        <input type="checkbox" id="francesa" name="comida">
+        <label>Francesa</label><br>
+        <input type="checkbox" id="espanola" name="comida">
+        <label>Española</label><br>
+
+        <h2>Edad</h2>
+        <input type="radio" id="12-17" name="edad">
+        <label>De 12 a 17 años</label><br>
+        <input type="radio" id="18-35" name="edad">
+        <label>De 18 a 35 años</label><br>
+        <input type="radio" id="36-65" name="edad">
+        <label>De 36 a 65 años</label><br>
+        <input type="radio" id="65+" name="edad">
+        <label>Más de 65 años</label><br>
+
+        <h2>Platos que te gustan</h2>
+        <select multiple name="platos">
+            <optgroup label="Italiana">
+                <option value="pizza">Pizza</option>
+                <option value="pasta">Pasta</option>
+                <option value="risotto">Risotto</option>
+            </optgroup>
+            <optgroup label="Francesa">
+                <option value="croissant">Croissant</option>
+                <option value="soufle">Soufle</option>
+                <option value="cassoulet">Cassoulet</option>
+            </optgroup>
+            <optgroup label="Española">
+                <option value="tortilla">Tortilla</option>
+                <option value="paella">Paella</option>
+                <option value="cocido">Cocido</option>
+            </optgroup>
+        </select>
+    </form>
+
+</body>
+
+</html>

@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tarea 2 form mascotas David Prado</title>
+</head>
+<body>
+    <h1>WEBPET</h1>
+    <img width="200px" height="100px" src="https://e00-expansion.uecdn.es/assets/multimedia/imagenes/2022/02/08/16443364419282.jpg" alt="Foto de perro de jemplo">
+    <h2>Si desea información, Por favor, rellene los datos...</h2>
+    <form>
+        <fieldset>
+            <legend>Datos Personales</legend>
+            <p><label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required pattern="[A-ZÑña-z0-9]+" placeholder="Introduzca su nombre" title="Error de formateo">
+        </p>
+        <p>
+            <label for="telefono">Teléfono:</label>
+            <!-- numero de 0 a 9 , 9 veces-->
+            <input type="tel" id="telefono" name="telefono" pattern="[0-9]{6}" maxlength="9" required placeholder="Introduzca su telefono" title="Error de formateo">
+        </p>
+        <p>
+            <label for="correo">Dirección de correo:</label>
+            <input type="email" id="correo" name="correo" required placeholder="Introduzca su dirección de correo">
+        </p>
+        <p>
+            <label for="fecha">Fecha:</label>
+            <input type="date" id="fecha" name="fecha">
+        </p>
+        </fieldset>
+        <fieldset>
+            <legend>Razas favoritas</legend>
+            <label for="raza">Raza:</label>
+            <input type="text" id="raza" name="raza" list="razas">
+            <!-- al input le asigno el datalist de las razas -->
+            <datalist id="razas" >
+                <option value="Perro">
+                <option value="Gato">
+                <option value="Conejo">
+                <option value="Pajaro">
+                <option value="Peces">
+            </datalist>
+        </fieldset>
+
+        <fieldset>
+            <legend>Votación general de razas</legend>
+
+            <input type="range" min="1" max="10" name="puntuacionPerro" id="puntuacionPerro" title="Solo se permite poner puntuacion de 1 a 10">Perro
+            <input type="range" min="1" max="10" name="puntuacionGato" id="puntuacionGato" title="Solo se permite poner puntuacion de 1 a 10">Gato
+            <input type="range" min="1" max="10" name="puntuacionConejo" id="puntuacionConejo" title="Solo se permite poner puntuacion de 1 a 10">Conejo
+            <input type="range" min="1" max="10" name="puntuacionPajaro" id="puntuacionPajaro" title="Solo se permite poner puntuacion de 1 a 10">Pajaro
+            <input type="range" min="1" max="10" name="puntuacionPeces" id="puntuacionPeces" title="Solo se permite poner puntuacion de 1 a 10">Peces
+
+        </fieldset>
+
+        <fieldset> 
+            <legend>Subir fichero</legend>
+            <label for="fichero">Introduce el fichero de la raza</label>
+            <input type="file" name="fichero" id="fichero">
+        </fieldset>
+
+        <input type="submit" value="Enviar">
+    </form>
+
+
+</body>
+</html>

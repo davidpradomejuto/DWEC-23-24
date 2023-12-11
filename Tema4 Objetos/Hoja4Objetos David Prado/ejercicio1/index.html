@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejercicio 1</title>
+    <script src='./Clases.js'></script>
+    <script src='./Ejecucion.js'></script>
+    <link rel="stylesheet" href="css.css">
+
+</head>
+
+<body>
+
+
+    <fieldset>
+        <legend>Crear Persona</legend>
+        <p>
+            <label for="nombre">Nombre: </label>
+            <input type="text" id="nombre">
+        </p>
+
+        <p>
+            <label for="dni">DNI: </label>
+            <input type="text" id="dni">
+        </p>
+
+        <p>
+            <label for="direccion">Direccion: </label>
+            <input type="text" id="direccion">
+        </p>
+
+        <p>
+            <label for="telefono">Telefono: </label>
+            <input type="tel" id="telefono">
+        </p>
+
+        <legend>Crear Cuenta</legend>
+        <p>
+            <label for="nCuenta">Numero de cuenta: </label>
+            <input type="text" id="nCuenta">
+        </p>
+
+        <p>
+            <label for="saldo">Saldo: </label>
+            <input type="number" id="saldo">
+        </p>
+
+        <button id="BtnCrearCuenta" type="button">Crear Cuenta</button>
+    </fieldset>
+
+    <fieldset>
+        <legend>Operaciones Genericas</legend>
+        <p>
+ 
+            <textarea id="visualizador" cols="70" rows="10">
+
+            </textarea>
+        </p>
+
+        <button id="BtnAumentarSaldo" type="button">Aumentar Saldo</button>
+        <button id="BtnRetencion10" type="button">Retencion 10%</button>
+        <button id="BtnVisualizarClientes" type="button">Visualizar Clientes</button>
+    </fieldset>
+
+    <fieldset>
+        <legend>Operaciones Especificas</legend>
+        <p>
+            <label for="cantidad">Cantidad: </label>
+            <input type="number" id="cantidad">
+        </p>
+
+        <p>
+            <label for="nombreCliente">Nombre del cliente: </label>
+            <input type="text" id="nombreCliente">
+        </p>
+
+
+        <button id="BtnAumentarSaldoCliente" type="button">Aumentar Saldo del cliente</button>
+        <button id="BtnRetencionCliente" type="button">Retencion de saldo del cliente</button>
+
+    </fieldset>
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+    <form action="">
+        <label for="modelo">Modelo de coche</label>
+        <input type="text" id="modelo" name="modelo" placeholder="Introduce el modelo" required pattern="[Aa](1|3|4|15)"
+            title="Solo son validos los modelo 'A' del 1,3,4 y 15">
+
+        <input type="submit" value="Enviar">
+    </form>
+    <br>
+    <form action="">
+        <label for="numeroBinario">Numero binario de 8 digitos</label>
+        <input type="text" id="numeroBinario" name="numeroBinario" placeholder="Introduce el numero binario"
+            pattern="[0-1]{8}" title="Solo son valido los numeros binario de 8 digitos">
+<br>
+        <label for="numeroDecimal">Numero entero decimal de entre 1 y 5 digitos</label>
+        <input type="text" id="numeroDecimal" name="numeroDecimal"
+            placeholder="Numero entero decimal de entre 1 y 5 digitos" pattern="[0-9\.]{1,5}"
+            title="Solo son valido los numeros enteros decimales de entre 1 y 5 digitos">
+            <br>
+
+        <label for="codigo">Codigo de 3 caracteres y 3 numeros</label>
+        <input type="text" id="codigo" name="codigo" placeholder="Introduce un codigo de 3 caracteres y 3 numeros"
+            pattern="[a-zA-ZñÑ]{3}[0-9]{3}" title="Solo son valido los codigos de 3 caracteres y 3 numeros">
+            <br>
+
+        <label for="numeroEntero">Numero entero que contenga 5 digitos</label>
+        <input type="text" id="numeroEntero" name="numeroEntero" placeholder="Introduce un numero entero que contenga 5 digitos"
+            pattern="[0-9]{5}" title="Solo son valido los numeros entero que contengan 5 digitos">
+            <br>
+
+        <input type="submit" value="Enviar">
+
+    </form>
+</body>
+
+</html>

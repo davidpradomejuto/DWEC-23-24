@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>formularios autocalculados</title>
+</head>
+
+<body>
+    <section>
+        <form name="division" oninput="cociente.value=parseInt(dividendo.value)/parseInt(divisor.value)">
+            <input id="dividendo" type="number" value="0" /> :
+            <input id="divisor" type="number" value="0" /> =
+            <output name="cociente" for="dividendo divisor">
+        </form>
+    </section>
+
+    <section>
+        <h2>Calculo importe de Horas Extras</h2>
+        <form name="horasExtras" oninput="total.value=(parseInt(nHoras.value)*pHora.value)+parseFloat(suplemento.value)">
+            <p>
+                <label for="nHoras"> Numero de horas extras </label>
+                <input id="nHoras" type="number" value="0" />
+            </p>
+            <p>
+                <label for="pHora"> Precio Hora € </label>
+                <input id="pHora" type="number" value="0" />
+            </p>
+
+            <p>
+                <label for="suplemento"> Suplemento </label>
+                <input id="suplemento" type="number" value="0.20" />
+            </p>
+            <p>
+                <label for="total">total €</label>
+                <output name="total" for="nHoras pHora suplemento"></output>
+            </p>
+
+        </form>
+    </section>
+
+    <section>
+        <h2>Ejemplo range y output</h2>
+        <form name="nivelDeSaturacion" oninput="saturacion.value=parseInt(nivelSaturacion.value)">
+            <p>
+                <label for="nivelSaturacion"> Nivel de saturacion </label>
+                <input id="nivelSaturacion" type="range" min="0" max="100" value="0" />
+                <output name="saturacion" for="nivelSaturacion"></output>/100
+            </p>
+
+        </form>
+    </section>
+
+</body>
+
+</html>

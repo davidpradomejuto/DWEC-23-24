@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>EJ5 David PRADO</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script src='./fichero.js'></script>
+    <link rel="stylesheet" href="css.css">
+</head>
+
+<body>
+    <form>
+        <p>
+        <fieldset>
+            <legend>Tipo de carne</legend>
+            <select name="carne" id="tipoCarne" required>
+                <option value="ternera">Ternera</option>
+                <option value="cerdo">Cerdo</option>
+                <option value="pollo">Pollo</option>
+            </select>
+        </fieldset>
+        </p>
+
+        <p>
+        <fieldset>
+            <legend>Tamaño de la hamburguesa</legend>
+            <input type="radio" id="tNormal" name="tamanio" value="normal" checked="checked">Normal
+            <input type="radio" id="tXl" name="tamanio" value="xl">XL
+        </fieldset>
+        </p>
+
+        <p>
+        <fieldset>
+            <legend>Ingredientes</legend>
+            <input type="checkbox" id="vegetal" checked="checked">Vegetal
+            <input type="checkbox" id="queso">Queso
+            <input type="checkbox" id="jamon">Jamon
+        </fieldset>
+        </p>
+        <fieldset>
+            <legend>Ingredientes</legend>
+            <textarea id="infoHamburguesa" rows="4" cols="45"></textarea>
+        </fieldset>
+
+        <p>
+            <label for="total">hamburguesas totales:</label>
+            <input type="text" id="total" readonly>
+        </p>
+        <p>
+            <input type="button" class="btn" id="btnPedido" value="Pedido+">
+            <input type="button" class="btn" id="btnPedidoTotal" value="Pedido Total">
+            <input type="reset" class="btn" id="btnLimpiar" value="limpiar">
+        </p>
+    </form>
+</body>
+
+</html>

@@ -1,0 +1,57 @@
+    /* Estilo para el cuerpo de la página */
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f2f2f2;
+        margin: 0;
+        padding: 0;
+    }
+    
+    /* Estilo para el formulario */
+    form {
+        max-width: 400px;
+        margin: 0 auto;
+        background-color: #fff;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    }
+    
+    /* Estilo para las etiquetas y los campos de entrada */
+    label {
+        display: block;
+        margin-bottom: 5px;
+    }
+    
+    input[type="number"],
+    select {
+        width: 95%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+    
+    /* Estilo para el botón de calcular y el botón de limpiar */
+    #btnCalcular, #btnLimpiar {
+        padding: 10px 20px;
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+    
+    #btnCalcular:hover, #btnLimpiar:hover {
+        background-color: #0056b3;
+    }
+    
+    /* Estilo para el campo de resultado */
+    #resultado {
+        width: 95%;
+        margin-bottom: 5px;
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #f2f2f2;
+    }

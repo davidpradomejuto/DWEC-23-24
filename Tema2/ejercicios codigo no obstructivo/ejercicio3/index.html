@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>EJ3</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script src='./fichero.js'></script>
+    <link rel="stylesheet" href="css.css">
+</head>
+
+<body>
+    <form>
+        <p>
+            <label for="numero">numero</label>
+            <input type="number" id="numero" min="0" step="1" pattern="[0-9]+">
+            <input type="button" id="btnOtro" value="Otro Numero">
+        </p>
+    
+        <p>
+            <textarea type="text" id="cadena" value="CADENA" readonly></textarea>
+        </p>
+
+        <p>
+            <label for="total">total:</label>
+            <input type="text" id="total" readonly>
+            <input type="button" id="btnTotal" value="Total">
+            <input type="reset" id="btnLimpiar" value="limpiar">
+        </p>
+    </form>
+</body>
+
+</html>
