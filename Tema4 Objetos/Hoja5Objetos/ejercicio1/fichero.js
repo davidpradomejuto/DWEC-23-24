@@ -1,17 +1,6 @@
-var minus = ['Lunes', 'martes', 'miércoles', 'jueves', 'viernes', 'sábado', 'domingo'];
-
-var mayus = [];
 /* 
-Disponemos de una matriz de datos llamada minus con los días de la semana escritos en minúscula.
- A partir de minus, crea otro array mayus con las cadenas con el siguiente formato:
-LuneS, MarteS, MiércoleS, JueveS, VierneS, SábadO, DomingO
-Primera y última letra en mayúsculas
+Haciendo uso de un objeto Date, crea un objeto de una clase que construyas
+para saludar al usuario tras iniciar sesión y que indique la fecha y la hora
+actuales.
 */
-
-for (var i = 0; i < minus.length; i++) {
-    var letra = minus[i].charAt(0).toUpperCase();
-    letra = minus[i].charAt(minus.length).toUpperCase();
-    mayus.push(letra);
-}
-
-console.log(mayus);
+console.log(`Hola usuario en este momento son ${Date.now().toString()}`);
