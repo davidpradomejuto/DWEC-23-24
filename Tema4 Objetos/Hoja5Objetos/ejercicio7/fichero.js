@@ -20,47 +20,89 @@ deletreo y también a la inversa.
 
 var sigue = true;
 
-var cadenas = prompt("Introduce una palabra, coon un '.' el programa ser termina");
+var cadenas = prompt("Introduce una cadena, cada frase termina con un '.'");
 
-addEventListener('load',inicio());
+addEventListener('load', inicio, false);
 
-function inicio(){
-    btnExtraerFrases.addEventListener('click',ExtraerFrases());
-    btnExtraerPalabras.addEventListener('click',ExtraerPalabras());
-    btnFraseLarga.addEventListener('click',FraseLarga());
-    btnNumerar.addEventListener('click',Numerar());
-    btnDeletrear.addEventListener('click',Deletrear());
+function inicio() {
+
+    btnExtraerPalabras.addEventListener('click', ExtraerPalabras, false);
+    btnExtraerFrases.addEventListener('click', ExtraerFrases, false);
+    btnFraseLarga.addEventListener('click', FraseLarga, false);
+    btnNumerar.addEventListener('click', Numerar, false);
+    btnDeletrear.addEventListener('click', Deletrear, false);
 }
 
-function ExtraerFrases(){
+function ExtraerFrases() {
+    visualizarFrases.value='';
+
     let arrFrases = cadenas.split(".");
 
-    visualizarFrases.value = `hay ${arrFrases.length} frases `;
+    visualizarFrases.value = `\nhay ${arrFrases.length} frases `;
 
     for (let i = 0; i < arrFrases.length; i++) {
-        visualizarFrases.value = visualizarFrases.value+` Frase numero ${i} es ${arrFrases[i]}`;
+        visualizarFrases.value = visualizarFrases.value + `\nFrase numero ${i} es '${arrFrases[i]}' `;
     }
 }
 
-function ExtraerPalabras(){
-    let arrPalabras = cadenas.split(" ");
+function ExtraerPalabras() {
+    visualizarPalabras.value='';
 
-    visualizarPalabras.value = `hay ${arrPalabras.length} frases `;
+    let arrPalabras = cadenas.split(' ');
+
+    visualizarPalabras.value = `\nhay ${arrPalabras.length} palabras `;
 
 
     for (let i = 0; i < arrPalabras.length; i++) {
-        visualizarPalabras.value = visualizarPalabras.value+`palabra numero ${i} es ${arrPalabras[i]}`;
+        visualizarPalabras.value = visualizarPalabras.value + `\nPalabra numero ${i} es '${arrPalabras[i]}' `;
     }
 }
 
-function FraseLarga(){
+function FraseLarga() {
+    visualizarLarga.value='';
+
+    let arrFrases = cadenas.split(".");
+    let frase = 0;
+    let contadorPalabras = 0;
+
+
+    for (let i = 0; i < arrFrases.length; i++) {
+        if (arrFrases[i].length >= contadorPalabras) {
+            contadorPalabras = arrFrases[i].length;
+            frase = i;
+        }
+    }
+    visualizarLarga.value = `\nLa Frase mas larga es '${arrFrases[frase]}' `;
+}
+
+function Numerar() {
+    visualizarNumerar.value='';
+
+    let arrFrases = cadenas.split(".");
+
+    let arrPalabras = arrFrases[nfrase.value].split(' ');
+
+    for (let i = 0; i < arrPalabras.length; i++) {
+        visualizarNumerar.value = visualizarNumerar.value + `\nla palabra ${i} es '${arrPalabras[i]}' `;
+    }
+
+    // let stringPalabras = arrPalabras.join('-');
+    visualizarNumerar.value = visualizarNumerar.value + `\nEl conjunto de palabras es '${arrPalabras.join('-')}'`;
 
 }
 
-function Numerar(){
+function Deletrear() {
+    visualizarDeletreo.value='';
 
-}
 
-function Deletrear(){
+    let arrPalabras = cadenas.split(' ');
 
+    let palabra = arrPalabras[npalabra.value];
+
+    let arrLetras = palabra.split('');
+
+
+    for (let i = 0; i < arrLetras.length; i++) {
+        visualizarDeletreo.value = visualizarDeletreo.value + ` '${arrLetras[i]}' `;
+    }
 }
