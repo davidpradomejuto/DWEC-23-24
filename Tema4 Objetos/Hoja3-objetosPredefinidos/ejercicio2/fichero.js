@@ -20,7 +20,7 @@ c. La segunda parte acepta puntos, dígitos, guiones y letras
 
 
 function validarEmail(cadena){
-let regex = /^\w+([\.-]?\w+)@([\.-]?\w+)*/;
+let regex = /^\w+([\.-]?\w+)@([\.-]?\w+)*(\.\D{2,3}$)/;
 
     if(regex.test(cadena)){
         console.log(`La cadena ${cadena} es valida`);
