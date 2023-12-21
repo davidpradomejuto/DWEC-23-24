@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset='utf-8'>
+    <meta http-equiv='X-UA-Compatible' content='IE=edge'>
+    <title>EJ11 David Prado</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <script src='./fichero.js'></script>
+    <link rel="stylesheet" href="css.css">
+</head>
+<!-- Realizamos el siguiente formulario: con imágenes incluidas.
+
+Se trata de elegir el lugar de salida, el destino y el medio de transporte. Una
+vez realizado esto pulsamos el botón ver viaje y al cabo de 2 segundos, nos muestra
+una progressbar simulando que está cargando y nos abrirá una ventana centrada en la
+ventana (utilizando las propiedades de anchura y altura) en la pantalla de 300 por 300
+con la información del viaje y con la imagen del destino, tendrá también la ventana el
+botón para cerrarla. La ventana se llamará Popup.
+
+Utilizamos la colección images de document para trabajar con ellas. Con todas las
+elecciones válidas creamos una matriz de dos dimensiones que irá registrando y
+acumulando las salidas y las llegadas: -->
+<body>
+    
+    <label>Lugar de salida: </label>
+    <select id="salida">
+        <option value="oviedo">Oviedo</option>
+        <option value="santander">Santander</option>
+        <option value="bilbao">Bilbao</option>
+        <option value="madrid">Madrid</option>
+
+    </select>
+
+    <p>
+        <label>Lugar de Llegada: </label>
+        <select id="llegada">
+            <option value="roma">Roma</option>
+            <option value="londres">Londres</option>
+            <option value="paris">Paris</option>
+        </select>
+    </p>
+    <p> 
+        <label>Medio de Transporte: </label>
+         <input type="radio" name="transporte" value="avion" id="transporte" checked>Avion
+         <input type="radio" name="transporte" value="tren" id="transporte">Tren
+         <input type="radio" name="transporte" value="autobus" id="transporte">Autobus
+        <input type="button" id="verViaje" value="Ver Viaje">
+    </p>
+
+</body>
+
+</html>
