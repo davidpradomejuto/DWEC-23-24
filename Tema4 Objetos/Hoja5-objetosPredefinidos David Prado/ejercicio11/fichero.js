@@ -12,50 +12,54 @@ acumulando las salidas y las llegadas:
 */
 
 addEventListener('load', inicio, false);
-const llegadas = { "roma": "roma.jpg", "paris": "paris.jpg", "londres": "londres.jpg" };
 
-var viajes = { 'oviedo': { 'roma': 0, 'paris': 0, 'londres': 0 }, "santander": { 'roma': 0, 'paris': 0, 'londres': 0 }, "madrid": { 'roma': 0, 'paris': 0, 'londres': 0 }, "bilbao": { 'roma': 0, 'paris': 0, 'londres': 0 } };
+var viajes = {
+  'oviedo': { 'roma': 0, 'paris': 0, 'londres': 0 },
+  'santander': { 'roma': 0, 'paris': 0, 'londres': 0 },
+  'madrid': { 'roma': 0, 'paris': 0, 'londres': 0 },
+  'bilbao': { 'roma': 0, 'paris': 0, 'londres': 0 }
+};
 
 function inicio() {
-    var popup = null;
-    verViaje.addEventListener('click', ver, false);
+  var popup = null;
+  verViaje.addEventListener('click', ver, false);
 
-    function ver() {
-        viajes[salida.value][llegada.value]++;
-        setTimeout(() => {
-            popup = popupwindow('popup.html', 300, 300);
+  function ver() {
+    //hago que la funcion se ejecute 1 segundo despues de darle al boton
+    setTimeout(() => {
+      viajes[salida.value][llegada.value]++;
+      popup = popupwindow('', 300, 300);
 
-            popup.document.write(`<h1>Mostrando datos del viaje</h1>
+      //maqueto el popup con la imagen y todos los datos
+      popup.document.write(`<link rel="stylesheet" href="css.css">
+      
+      <h1>Mostrando datos del viaje</h1>
 
-            <p>Viaje en ${document.querySelector('input[name="transporte"]:checked').value}desde <strong>${salida.value}</strong> hasta <strong>${llegada.value}</strong></p>
+        <p>Viaje en ${document.querySelector('input[name="transporte"]:checked').value} desde
+        <strong>${salida.value}</strong> hasta <strong>${llegada.value}</strong></p>
 
-            <img src="img/${llegada.value}.jpg" width='200px' heigth='200px' alt="viaje" /> 
+        <img src="img/${llegada.value}.jpg" width='200px' height='200px' alt="viaje" />
 
-            <button><a href="javascript:window.open('','_self').close();">close</a></button>
-            
-            <table>
-            <tr><td>SALIDAS</td><td>ROMA</td><td>PARIS</td><td>LONDRES</td></tr>
-            <tr><td>${viajes['oviedo']}</td><td>${viajes['oviedo']['roma']}</td><td>${viajes['oviedo']['roma']}</td><td>${viajes['oviedo']['roma']}</td></tr>
-            </table>
-            `);
+        <button>
+          <a href="javascript:window.open('','_self').close();">Cerrar</a>
+        </button>`);
 
-            for (var i = 0; i < viajes.length; i++) {
-                for (var j = 0; j < viajes[i].length; j++) {
-                   for (var key in viajes[i][j]) {
-                     if (viajes[i][j].hasOwnProperty(key)) {
-                       console.log(key + ': ' + viajes[i][j][key]);
-                     }
-                   }
-                }
-               }
+      // muestro la tabla iterando el objeto de los viajes
+      popup.document.write('<table><tr><td>Salidas</td><td>Roma</td><td>París</td><td>Londres</td></tr>');
+      for (var ciudad in viajes) {
+        popup.document.write(`<tr><td>${ciudad}</td><td>${viajes[ciudad]['roma']}</td><td>${viajes[ciudad]['paris']}</td><td>${viajes[ciudad]['londres']}</td></tr>`);
+      }
+      popup.document.write('</table>');
 
-        }, "1000");
-    }
+    }, 1000);
+  }
 
-    function popupwindow(url, w, h) {
-        var left = (screen.width / 2) - (w / 2);
-        var top = (screen.height / 2) - (h / 2);
-        return window.open(url, '_blank', 'width=' + w + ', height=' + h + ', top=' + top + ', left=' + left);
-    }
+  //funcion para sacar el sitio donde sacar el popup
+  function popupwindow(url, w, h) {
+    var left = (screen.width / 2) - (w / 2);
+    var top = (screen.height / 2) - (h / 2);
+    return window.open(url, 'Popup', 'width=' + w + ', height=' + h + ', top=' + top + ', left=' + left);
+  }
 }
+
 
