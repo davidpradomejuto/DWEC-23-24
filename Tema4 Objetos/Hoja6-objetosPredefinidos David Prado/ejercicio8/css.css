@@ -1,0 +1,35 @@
+body{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 15px;
+}
+.imagen{
+	height: 300px;
+	width: 400px;
+}
+
+.boton{
+	padding: 15px 30px;
+	border-radius: 5px;
+	border: 0px;
+	color: white;
+}
+
+#carrousel{
+	border: 2px solid black;
+}
+
+.boton:hover{
+	border: 2px solid black;
+}
+
+
+#btnOn{
+background-color: green;
+}
+
+#btnOff{
+background-color: red;
+}
+
