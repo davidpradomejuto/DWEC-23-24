@@ -6,22 +6,32 @@
     <script src='./fichero.js'></script>
 </head>
 <!--
-Realizar un script que cuando pulse un botón, clone este trozo de código HTML y lo
-añada en otro nuevo section.
-Realizar un documento HTML con un section en el cual están estos enlaces
-&lt;a href=”#”&gt;Enlace 1&lt;/a&gt;&lt;br&gt;
-&lt;a href=”#”&gt;Enlace 2&lt;/a&gt;&lt;br&gt;
-&lt;a href=”#”&gt;Enlace 3&lt;/a&gt;&lt;br&gt;
+Tenemos dentro de una sección en la página 5 imágenes, tal y como se muestra en la
+siguiente imagen:
+
+a. Disponemos también de un botón de borrado lento, cada vez que pulsamos, borra
+una imagen hasta que no queda ninguna y entonces creo un párrafo dentro de la
+sección con el siguiente mensaje “Ya están eliminadas todas las imágenes”.
+
+b. Tenemos otro botón de borrado total que me borra todas las imágenes a la vez, y
+hace exactamente lo mismo que en el anterior apartado, escribir un mensaje en
+un párrafo.
 -->
 
 <body>
-    <input type="button" id="btnAddP" value="Añadir Parrafo">
+    
 
-    <a href=”#”>Enlace 1</a><br>
-    <a href=”#”>Enlace 2</a><br>
-    <a href=”#”>Enlace 3</a><br>
+    <div id="contenedor">
+        <img src="firefox.png" width="100px" height="100px">
+        <img src="java.png"  width="100px" height="100px">
+        <img src="bea.png"  width="100px" height="100px">
+        <img src="eclipse.svg"  width="100px" height="100px">
+        <img src="opera.jpg"  width="100px" height="100px">
+    </div>
 
-    <div id="contenedor"></div>
+    <input type="button" id="btnDelete" value="Eliminar Uno">
+
+    <input type="button" id="btnDeleteAll" value="Eliminar todos">
 </body>
 
 </html>

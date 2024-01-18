@@ -10,16 +10,47 @@ hace exactamente lo mismo que en el anterior apartado, escribir un mensaje en
 un párrafo.
 */
 
-addEventListener('DOMContentLoaded',inicio);
+addEventListener('DOMContentLoaded', inicio);
 
-function inicio(){
+function inicio() {
     var contenedor = document.querySelector('#contenedor');
-    btnAddP.addEventListener('click',addP);
+    btnDelete.addEventListener('click', deleteOne);
+    btnDeleteAll.addEventListener('click', deleteAll);
 
 }
 
-function addP(){
-    var section = document.createElement('section');
-    section.innerHTML='<a href=”#”>Enlace 1</a><br><a href=”#”>Enlace 2</a><br><a href=”#”>Enlace 3</a><br>';
-    contenedor.appendChild(section);
+function deleteOne() {
+    if (contenedor.childNodes.length > 0) {
+        //elimino el primer hijo del contenedor
+        contenedor.firstChild.remove();
+    } else {
+        //cuando se terminan de borrar los hijos se muestra ese parrafo
+
+        var p = document.createElement('p');
+        p.innerText = "“Ya están eliminadas todas las imágenes”";
+        contenedor.appendChild(p);
+        //deshabilito los botones
+        btnDelete.disabled = true;
+        btnDeleteAll.disabled = true;
+    }
 }
+
+function deleteAll() {
+    if (contenedor.childNodes.length > 0) {
+
+        //mientras existan hijos va borrando el primero
+        while (contenedor.childNodes.length > 0) {
+            contenedor.removeChild(contenedor.firstChild);
+        }
+        //cuando se terminan de borrar los hijos se muestra ese parrafo
+        var p = document.createElement('p');
+        p.innerText = "“Ya están eliminadas todas las imágenes”";
+        contenedor.appendChild(p);
+
+        //deshabilito los botones
+        btnDelete.disabled = true;
+        btnDeleteAll.disabled = true;
+
+    }
+}
+
