@@ -1,0 +1,53 @@
+body {
+  font-family: 'Arial', sans-serif;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  margin: 0;
+  background-color: #f8f8f8;
+}
+
+.container {
+  text-align: center;
+}
+
+#cookieButton {
+  background-color: #e6ac00;
+  border: none;
+  color: #fff;
+  font-size: 16px;
+  padding: 20px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.1s ease;
+  background-image: url('cookie_texture.jpg'); /* Agrega tu propia textura de galleta aquí */
+  background-size: cover;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+#cookieButton:hover {
+  background-color: #d18f00;
+  transform: scale(1.05);
+}
+
+#notification {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 24px;
+  color: #ff0404;
+  opacity: 0;
+  animation: fadeOut 2s forwards, moveUp 2s forwards;
+}
+
+@keyframes fadeOut {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+@keyframes moveUp {
+  0% { transform: translate(-50%, -50%) translateY(0); }
+  100% { transform: translate(-50%, -50%) translateY(-20px); }
+}

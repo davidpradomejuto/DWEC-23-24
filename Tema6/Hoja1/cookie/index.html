@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="styles.css">
+  <title>Cookie Clicker</title>
+</head>
+<body>
+  <div class="container">
+    <h1 id="score">0 Cookies</h1>
+    <button id="cookieButton" onclick="clickCookie()">Click me!</button>
+    <div id="upgrades">
+      <h2>Upgrades</h2>
+      <button onclick="buyUpgrade(10, 1)">Auto Clicker (+1/sec) - <span id="autoClickerPrice">10</span> Cookies</button>
+      <button onclick="buyUpgrade(50, 5)">Super Clicker (+5/sec) - <span id="superClickerPrice">50</span> Cookies</button>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
