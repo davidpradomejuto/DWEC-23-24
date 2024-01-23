@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <title>Ejercicio 7</title>
+    <script src='./fichero.js'></script>
+    <link rel="stylesheet" href="css.css">
+</head>
+<!--
+Realiza una página con dos secciones con texto y las opciones necesarias para:
+a. Aumentar el tamaño de fuente de toda la página
+b. Volverla a poner a su tamaño normal
+c. Cambiar el color de fondo
+d. Volver a poner el original
+
+e. Lo mismo que las opciones anteriores, pero para una sección determinada
+f. Cambiar el tipo de letra para una sección
+-->
+
+<body>
+    <div>
+        <fieldset>
+            <legend>Opciones Generales</legend>
+            <input type="button" id="btnAumentarGeneral" value="aumentar tamaño general">
+            <input type="button" id="btnNormalizarGeneral" value="volver al tamaño normal general">
+            <input type="button" id="btnCambiarColorGeneral" value="cambiar color general">
+            <input type="color" id="rangoColor" value="#e66465">
+            <input type="button" id="btnColorOriginalGeneral" value="volver al color general">
+        </fieldset>
+        <svg xmlns="http://www.w3.org/2000/svg" width="110" height="110" viewBox="0 0 110 110" fill="none">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M55.0039 0C85.3633 0 110.008 24.6441 110.008 54.9995C110.008 85.3559 85.3633 110 55.0039 110C24.6446 110 0 85.3559 0 54.9995C0 24.6441 24.6446 0 55.0039 0ZM48.5749 33.0133C48.5749 31.7902 47.5034 30.7965 46.3426 30.7965H37.0562C35.8061 30.7965 34.8239 31.7902 34.8239 33.0133V76.7162C34.8239 77.9402 35.8061 78.9339 37.0562 78.9339H46.3426C47.5034 78.9339 48.5749 77.9402 48.5749 76.7162V33.0133ZM76.0769 33.0133C76.0769 31.7902 75.0947 30.7965 73.8446 30.7965H64.5582C63.3081 30.7965 62.3259 31.7902 62.3259 33.0133V76.7162C62.3259 77.9402 63.3081 78.9339 64.5582 78.9339H73.8446C75.0947 78.9339 76.0769 77.9402 76.0769 76.7162V33.0133Z" fill="black"/>
+            </svg>
+        <fieldset>
+            <legend>Opciones Individuales</legend>
+            <select>
+                <option value="1">1</option>
+                <option value="2">2</option>
+            </select>
+            <input type="button" id="btnAumentarIndividual" value="aumentar tamaño Individual">
+            <input type="button" id="btnNormalizarIndividual" value="volver al tamaño normal Individual">
+            <input type="button" id="btnCambiarColorIndividual" value="cambiar color Individual">
+            <input type="button" id="btnColorOriginalIndividual" value="volver al color Individual">
+
+            <input type="button" id="btnCambiarLetra" value="cambiar tipo de letra">
+        </fieldset>
+    </div>
+    <section>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras condimentum lorem et turpis hendrerit finibus.
+            Aliquam congue molestie metus sed mollis. Vestibulum ut nunc quis dolor rhoncus luctus. Sed lobortis purus
+            id massa volutpat, non hendrerit turpis mattis. Pellentesque elementum ante leo, quis elementum eros
+            pellentesque id. Nullam id odio pulvinar, vulputate risus nec, semper ipsum. Nulla dapibus tristique arcu,
+            non suscipit massa ullamcorper et.
+            Aenean ac dui est. Nulla et sem vitae lorem scelerisque pellentesque sed in odio. Maecenas interdum tempus
+            ante, facilisis imperdiet magna elementum a. In sagittis scelerisque libero, quis ullamcorper diam
+            pellentesque ut. Donec et ante vitae ante venenatis bibendum. Fusce interdum efficitur leo, in interdum
+            libero fringilla non. Maecenas rhoncus justo tincidunt nulla porta porttitor. Praesent tristique tortor dui.
+            Proin in orci mi. Vivamus vestibulum venenatis rutrum. Aenean ultricies ultricies magna, egestas eleifend
+            enim finibus eu. Quisque sed accumsan tellus. Duis ac facilisis nisi. Nulla finibus nisl nec sapien suscipit
+            luctus.
+            Nam placerat, elit non luctus tempus, arcu ligula viverra ex, eget dictum nunc metus in enim. Integer in
+            velit dignissim ante efficitur mollis. Mauris ornare varius metus, vel dapibus mauris posuere nec. Nulla sit
+            amet dolor ante. Aenean a vestibulum enim. Aliquam quis ligula eu enim semper lobortis. Sed at neque
+            volutpat, vehicula purus et, aliquam diam. Etiam a ex convallis, dictum est laoreet, pulvinar nunc.
+            Vestibulum blandit nec dolor aliquet mollis. Praesent sodales finibus risus in mattis. Phasellus augue
+            massa, volutpat ac risus quis, luctus elementum libero. In at velit lectus. Cras malesuada felis at
+            ullamcorper maximus. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+
+    </section>
+
+    <section>
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Cras condimentum lorem et turpis hendrerit finibus.
+            Aliquam congue molestie metus sed mollis. Vestibulum ut nunc quis dolor rhoncus luctus. Sed lobortis purus
+            id massa volutpat, non hendrerit turpis mattis. Pellentesque elementum ante leo, quis elementum eros
+            pellentesque id. Nullam id odio pulvinar, vulputate risus nec, semper ipsum. Nulla dapibus tristique arcu,
+            non suscipit massa ullamcorper et.
+            Aenean ac dui est. Nulla et sem vitae lorem scelerisque pellentesque sed in odio. Maecenas interdum tempus
+            ante, facilisis imperdiet magna elementum a. In sagittis scelerisque libero, quis ullamcorper diam
+            pellentesque ut. Donec et ante vitae ante venenatis bibendum. Fusce interdum efficitur leo, in interdum
+            libero fringilla non. Maecenas rhoncus justo tincidunt nulla porta porttitor. Praesent tristique tortor dui.
+            Proin in orci mi. Vivamus vestibulum venenatis rutrum. Aenean ultricies ultricies magna, egestas eleifend
+            enim finibus eu. Quisque sed accumsan tellus. Duis ac facilisis nisi. Nulla finibus nisl nec sapien suscipit
+            luctus.
+            Nam placerat, elit non luctus tempus, arcu ligula viverra ex, eget dictum nunc metus in enim. Integer in
+            velit dignissim ante efficitur mollis. Mauris ornare varius metus, vel dapibus mauris posuere nec. Nulla sit
+            amet dolor ante. Aenean a vestibulum enim. Aliquam quis ligula eu enim semper lobortis. Sed at neque
+            volutpat, vehicula purus et, aliquam diam. Etiam a ex convallis, dictum est laoreet, pulvinar nunc.
+            Vestibulum blandit nec dolor aliquet mollis. Praesent sodales finibus risus in mattis. Phasellus augue
+            massa, volutpat ac risus quis, luctus elementum libero. In at velit lectus. Cras malesuada felis at
+            ullamcorper maximus. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+    </section>
+</body>
+
+</html>
