@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculadora</title>
+  <link rel="stylesheet" href="css.css">
+</head>
+<body>
+
+  <div class="container">
+    <input type="text" id="display" class="display" disabled>
+    <br>
+    <input type="button" value="1" onclick="aniadirDisplay('1')">
+    <input type="button" value="2" onclick="aniadirDisplay('2')">
+    <input type="button" value="3" onclick="aniadirDisplay('3')">
+    <input type="button" value="/" onclick="aniadirDisplay('/')">
+
+    <br>
+    <input type="button" value="4" onclick="aniadirDisplay('4')">
+    <input type="button" value="5" onclick="aniadirDisplay('5')">
+    <input type="button" value="6" onclick="aniadirDisplay('6')">
+    <input type="button" value="*" onclick="aniadirDisplay('*')">
+    <br>
+    <input type="button" value="7" onclick="aniadirDisplay('7')">
+    <input type="button" value="8" onclick="aniadirDisplay('8')">
+    <input type="button" value="9" onclick="aniadirDisplay('9')">
+
+    <input type="button" value="-" onclick="aniadirDisplay('-')">
+    <br>
+    <input type="button" value="0" onclick="aniadirDisplay('0')">
+    <input type="button" value="+" onclick="aniadirDisplay('+')">
+    <input type="button" value="^" onclick="aniadirDisplay('**')">
+    <input type="button" value="%" onclick="aniadirDisplay('%')">
+
+    <br>
+    <input type="button" class="naranja" value="=" onclick="calcular()">
+    <input type="button" class="naranja" value="C" onclick="limpiarDisplay()">
+
+  </div>
+
+  <script>
+    function aniadirDisplay(value) {
+      document.getElementById('display').value += value;
+    }
+
+    function limpiarDisplay() {
+      document.getElementById('display').value = '';
+    }
+
+    function calcular() {
+      try {
+        var resultado = eval(document.getElementById('display').value);
+        document.getElementById('display').value = resultado;
+      } catch (error) {
+        alert(` Error ${error} Formato de operación no válido`);
+        limpiarDisplay();
+      }
+    }
+  </script>
+</body>
+</html>

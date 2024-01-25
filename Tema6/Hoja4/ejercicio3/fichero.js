@@ -17,6 +17,22 @@ function inicio() {
 
         let lista = document.createElement('table');
 
+        for (let i = 0; i < parseInt(filas); i++) {
+            let tr = document.createElement('tr');
+
+            for (let j = 0; j < parseInt(columnas); j++) {
+                let td = document.createElement('td');
+
+                td.innerText = Math.floor(Math.random() * 100) + 1;
+
+                tr.appendChild(td);
+                
+            }
+            lista.appendChild(tr);
+        }
+
+        contenedor.appendChild(lista);
+
         
     
 }
