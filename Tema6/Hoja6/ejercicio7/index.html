@@ -4,26 +4,30 @@
 <head>
     <title>Ejercicio 1</title>
     <script src='./fichero.js'></script>
-    <link href="css.css"  rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@1/css/pico.min.css">
+
+    <link href="css.css" rel="stylesheet">
+    <meta charset="UTF-8">
 </head>
 
 <body>
     <div id="container">
+        <h2>Elige un tema</h2>
         <select id="tema">
             <option value="videojuegos">videojuegos</option>
             <option value="coches">coches</option>
             <option value="aviones">aviones</option>
         </select>
-
         <input type="button" id="btnElegirTema" value="Elegir tema">
+<hr>
 
         <div>
             <p id="frase"></p>
         </div>
         <div id="controles">
             <input type="button" id="btnEnviarPalabra" value="enviar palabra">
-            <input type="button" id="btnComprobar" value="Comprobar">
-            <input type="button" id="btnReintentar" value="Reintentar">
+            <input type="button" id="btnComprobar" value="Comprobar" disabled>
+            <input type="button" id="btnReintentar" value="Reintentar" disabled>
         </div>
     </div>
 </body>

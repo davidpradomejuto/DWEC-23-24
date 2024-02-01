@@ -14,79 +14,127 @@
 
 
 addEventListener('load', inicio)
-var frase;
-var tema;
+
+
 
 function inicio() {
-    tema = document.querySelector('#tema');
-    frase = document.querySelector('#frase');
-    var btnElegirTema = document.querySelector('#btnElegirTema');
 
     var frases = new Map([
-        ['videojuegos', ["los videojuegos se '<span id='frase1'><span>' en un '<span id='frase2'><span>' o en una '<span id='frase3'><span>'", "Pokemon es un <span id='frase1'><span> de la compañia <span id='frase2'><span> que es una comapañia de <span id='frase3'><span>", "antes los juegos venian en <span id='frase1'><span> ahora se encuentran <span id='frase2'><span> y las copias fisicas son para <span id='frase3'><span>"]],
-        ['coches', ["", "", ""]],
-        ['aviones', ["", "", ""]]
+        ['videojuegos', "los videojuegos se ¿<p id='frase1'><p>? en un ?<p id='frase2'><p>? o en una ?<p id='frase3'><p>?"],
+        ['coches', "Los coches tienen 4 ¿<p id='frase1'><p>?  y necesitas un ?<p id='frase2'><p>? para conducirlos ?<p id='frase3'><p>?"],
+        ['aviones', "los aviones para volar tienen ¿<p id='frase1'><p>?  y se estacionan en ?<p id='frase2'><p>? y son llevados por ?<p id='frase3'><p>?"]
     ]);
 
 
+    var palabrasCorrectas = new Map([
+        ['videojuegos', ["juegan", "ordenador", "consola"]],
+        ['coches', ["ruedas", "carnet", "legalmente"]],
+        ['aviones', ["alas", "aeropuertos", "pilotos"]]
+    ]);
     var palabras = new Map([
-        ['videojuegos', ["juegan", "ordenador", "consola", "videojuego", "Nintendo", "Japonesa", "DVD", "digital", "Colecionista"]],
-        ['coches', ["", "", ""]],
-        ['aviones', ["", "", ""]]
+        ['videojuegos', ["juegan", "consola", "ordenador"]],
+        ['coches', ["carnet", "legalmente", "ruedas"]],
+        ['aviones', ["aeropuertos", "alas", "pilotos"]]
     ]);
 
-    var palabras = new Map([
-        ['videojuegos', ["juegan", "ordenador", "consola", "videojuego", "Nintendo", "Japonesa", "DVD", "digital", "Colecionista"]],
-        ['coches', ["", "", ""]],
-        ['aviones', ["", "", ""]]
-    ]);
 
 
     btnElegirTema.addEventListener('click', () => {
 
-        switch (tema.value) {
-            case 'videojuegos':
-                let contador = 1;
-                frase.innerHTML = frases.get("videojuegos")[0];
+        btnElegirTema.disabled = true;
 
-                let selectFrase = document.createElement('select');
-                selectFrase.id = "selectPalabra";
+        document.querySelector('#btnReintentar').disabled = false;
+        document.querySelector('#btnComprobar').disabled = false;
 
-                for (let i = 0; i < 3; i++) {
-                    let option = document.createElement('option');
-                    option.value = palabras.get("videojuegos")[i];
-                    option.textContent = palabras.get("videojuegos")[i];
-                    selectFrase.appendChild(option);
-                }
+        //este es el contador para ir metiendo las palabras en los span
+        var contador = 1;
 
-                document.querySelector('#controles').appendChild(selectFrase);
+        ponerFrase();
 
-                document.querySelector('#btnEnviarPalabra').addEventListener('click', () => {
-                    enviarPalabra(document.querySelector('#selectPalabra').value, contador);
-                    contador++;
-                });
-                document.querySelector('#btnComprobar').addEventListener('click', () => {
-                    comprobar(fraseParaComprobar, palabrasValidas)
+        document.querySelector('#btnEnviarPalabra').addEventListener('click', () => {
+            var select = document.querySelector('#selectPalabra');
+            enviarPalabra(select.value, contador);
+            if (select && select.selectedIndex >= 0) {
+                select.removeChild(select[select.selectedIndex]);
+            }
+            contador++;
+        });
 
-                });
+        document.querySelector('#btnComprobar').addEventListener('click', () => {
+            //le paso la frase
+            comprobar();
+        });
 
-                break;
+        document.querySelector('#btnReintentar').addEventListener('click', () => {
+            reintentar();
+        });
 
-            case 'coches':
-                break;
-
-            case 'aviones':
-                break;
-        }
 
 
         function enviarPalabra(palabra, posicion) {
-            frase = document.querySelector('#frase');
-            frase.querySelector( `#frase${posicion}`).innerHTML = palabra+frase.querySelector( `#frase${posicion}`).innerHTML;
+            frase.querySelector(`#frase${posicion}`).innerHTML = palabra + frase.querySelector(`#frase${posicion}`).innerHTML;
         }
 
-        function comprobar(fraseParaComprobar, palabrasValidas) {
+        function reintentar() {
+            document.querySelector('#selectPalabra').remove();
+            ponerFrase();
+            contador = 1;
         }
+
+        function comprobar() {
+
+            //variable para comprobar si es todo correcto
+            let correcto = true;
+            if (frase1.textContent === palabrasCorrectas.get(tema.value)[0]) {
+                frase1.style.color = 'green';
+            } else {
+                frase1.style.color = 'red';
+                correcto=false;
+            }
+
+            if (frase2.textContent === palabrasCorrectas.get(tema.value)[1]) {
+                frase2.style.color = 'green';
+            } else {
+                frase2.style.color = 'red';
+                correcto=false;
+            }
+
+            if (frase3.textContent === palabrasCorrectas.get(tema.value)[2]) {
+                frase3.style.color = 'green';
+            } else {
+                frase3.style.color = 'red';
+                correcto=false;
+            }
+
+            if(correcto){
+                alert('Enhorabuena la frase es correcta');
+            }else{
+                alert('VAYA!!!! HAS FALLADO')
+            }
+        }
+
+        function ponerFrase() {
+            //esta es la frase que se va poner en el HTML
+            frase.innerHTML = frases.get(tema.value);
+
+            //Genero el select de las palabras valids
+            var selectFrase = document.createElement('select');
+            selectFrase.id = "selectPalabra";
+
+            for (let i = 0; i < 3; i++) {
+                var option = document.createElement('option');
+                option.value = palabras.get(tema.value)[i];
+                option.textContent = palabras.get(tema.value)[i];
+                selectFrase.appendChild(option);
+
+            }
+
+            //añado el select de las palabras antes del boton de enviar la palabra
+            document.querySelector('#controles').insertBefore(selectFrase, document.querySelector('#btnEnviarPalabra'));
+
+        }
+
+
     });
 
 
