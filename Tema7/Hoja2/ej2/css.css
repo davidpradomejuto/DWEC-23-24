@@ -1,0 +1,8 @@
+#contenedor{
+   width: 100px;
+   height: 100px;
+    position: absolute;
+
+    background-color: rgb(255, 0, 0);
+    border: 1px solid black;
+}

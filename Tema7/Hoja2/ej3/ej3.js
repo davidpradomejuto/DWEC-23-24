@@ -1,27 +1,56 @@
-addEventListener('load', () => {
+window.addEventListener('load', () => {
+    var lista = document.querySelector('ul');
 
-    var formulario = document.forms[0];
+    var aniadir = document.querySelector('#btnAniadir');
 
-    var enviar = document.querySelectorAll("a")[0];
-    var res = document.querySelectorAll("a")[1];
+    var elementos = lista.children;
 
-    enviar.addEventListener("click", (objeto) => {
+    Array.from(elementos).forEach(elemento => {
+        elemento.querySelector('span').addEventListener("click", (objeto) => {
+            elemento.remove();
+        });
+    });
 
-        var correo = document.forms[0].elements["correo"].value;
+    aniadir.addEventListener("click", () => {
+        let texto = prompt('Escribe lo que quieras añadir');
+        let li = document.createElement('li');
+        li.innerHTML = "<span>|x|</span>" + texto;
+        //le añado un add event listener propio para poder eliminarlo
+        li.addEventListener("click", (objeto) => {
+            li.remove();
+        });
+        //añado el li Al ul 
+        lista.appendChild(li);
+       
+    });
+    
+    let draggedItem = null;
 
-        var patron = /@/;
+    lista.addEventListener("dragstart", function(event) {
+        draggedItem = event.target;
+        event.dataTransfer.setData("text/plain", event.target.id);
+    });
 
-        if (patron.test(correo)) {
-            formulario.submit();
-        } else {
-            alert("Correo incorrecto, debe contener una @");
-            objeto.preventDefault();
+    lista.addEventListener("dragover", function(event) {
+        event.preventDefault();
+    });
+
+    lista.addEventListener("drop", function(event) {
+        event.preventDefault();
+        var id = event.dataTransfer.getData("text/plain");
+        var droppedItem = document.getElementById(id);
+
+        if (draggedItem !== droppedItem) {
+            var rect = lista.getBoundingClientRect();
+            var offset = event.clientY - rect.top;
+            var targetIndex = Math.floor(offset / draggedItem.offsetHeight);
+
+            if (targetIndex > Array.from(lista.children).indexOf(draggedItem)) {
+                lista.insertBefore(draggedItem, lista.children[targetIndex + 1]);
+            } else {
+                lista.insertBefore(draggedItem, lista.children[targetIndex]);
+            }
         }
-
     });
-
-    res.addEventListener("click", () => {
-        formulario.reset();
-    });
-
 });
+``

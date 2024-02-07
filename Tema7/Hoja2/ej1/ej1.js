@@ -1,7 +1,6 @@
 addEventListener('load', () => {
-    var span = document.querySelector("span");
-
-    span.addEventListener("click", (objeto) =>{
-        console.log(objeto);
+    document.addEventListener("contextmenu", (event) => {
+        event.preventDefault();
+        alert('No puedes abrir el menú contextual');
     });
 });
