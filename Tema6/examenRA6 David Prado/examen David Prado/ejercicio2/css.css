@@ -1,0 +1,61 @@
+table,td{
+    border: 1px solid rgb(220, 246, 220);
+    border-radius: 5px;
+}
+tr:nth-child(even){
+    background-color: #bde9b5;
+}
+
+th{
+    background:rgb(47, 227, 15);
+    color: white;
+}
+
+html{
+    font-family: sans-serif;
+}
+
+#divControles{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+#divPreguntas{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+button{
+    padding: 5px 15px;
+    margin: 15px;
+    border: 0px;
+    border-radius: 5px;
+    background-color: rgb(53, 181, 48);
+    color: white;
+}
+
+button:hover{
+    transform: scale(1.1);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
