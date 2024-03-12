@@ -1,0 +1,22 @@
+#container{
+    display: flex;
+    flex-direction: row;
+    gap: 15px;
+}
+
+#cajaverde{
+    background-color: green;
+    height: 40px;
+    width: 10px;
+    border: 1px solid black;
+}
+#cajaroja{
+    background-color: red;
+    height: 40px;
+    width: 10px;
+    border: 1px solid black;
+}
+
+
+
+
